@@ -1,0 +1,94 @@
+.contact-list {
+    display: grid;
+    grid: min-content / auto auto auto;
+    grid-gap: 20px;
+    padding: 0px 150px;
+}
+
+.icon {
+    margin-left: 3px;
+}
+
+.contact-card {
+    width: 390px;
+}
+
+.general-section-female {
+    background-color: #f748d1;
+    display: flex;
+    flex-direction: row;
+    height: 110px;
+}
+
+.general-section-male {
+    background-color: #69beff;
+    display: flex;
+    flex-direction: row;
+    height: 110px;
+}
+
+.profile-image-section img {
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 65%;
+    position: relative;
+    top: 15px;
+}
+
+.general-section-male span, h2, .general-section-female span, h2 {
+    margin: 0px;
+    color: white;
+}
+
+.general-section-male span, .general-section-female span {
+    margin-left: 10px;
+}
+
+.profile-image-section {
+    width: 40%;
+}
+
+.info-section {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.info-section img {
+    width: 14px;
+}
+
+
+.description {
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: lighter;
+    background-color: white;
+}
+
+.description p {
+    margin: 0px;
+}
+
+.contact-info {
+    background-color: #c9c9c9;
+    text-align: left;
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+.contact-info div {
+    margin: 4px 0px;
+}
+.contact-info span {
+    margin-left: 10px;
+}
+
+.contact-info img {
+    width: 16px;
+    vertical-align: middle;
+}

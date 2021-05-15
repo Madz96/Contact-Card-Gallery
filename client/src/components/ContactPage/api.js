@@ -2,7 +2,7 @@ import axios from 'axios';
 
 /* API call to retrieve all the contacts & save contact data to state */
 export const fetchContacts = async () => {
-    const response = await axios.get('https://run.mocky.io/v3/6d8903ea-c630-41c9-84a0-cde8b4a62f42').catch(error => {
+    const response = await axios.get('https://run.mocky.io/v3/6fe1f0c6-b6d4-4284-9eb6-e9279a59b1ff').catch(error => {
         console.log("Error when fetching all contacts: ", error);
     });
 

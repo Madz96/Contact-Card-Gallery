@@ -22,8 +22,8 @@ export function ContactPage(props) {
 
     return (
         <div>
-            <Contacts />
             <Search />
+            <Contacts />
         </div>
     )
 }
