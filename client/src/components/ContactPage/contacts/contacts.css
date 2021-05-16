@@ -2,11 +2,12 @@
     display: grid;
     grid: min-content / auto auto auto;
     grid-gap: 20px;
-    padding: 0px 150px;
+    padding: 20px 150px;
+
 }
 
 .icon {
-    margin-left: 3px;
+    margin-left: 2px;
 }
 
 .contact-card {
@@ -14,7 +15,7 @@
 }
 
 .general-section-female {
-    background-color: #f748d1;
+    background-color: #f363d4;
     display: flex;
     flex-direction: row;
     height: 110px;
@@ -58,6 +59,7 @@
 
 .info-section img {
     width: 14px;
+    vertical-align: middle;
 }
 
 

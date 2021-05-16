@@ -11,17 +11,17 @@ export function Contacts(props) {
         <div className="contact-list">
             {contacts.map((contact, i) => (
                 <div className="contact-card" key={i}>
-                    <div className={contact.GENDER == "Male" ? "general-section-male" : "general-section-female"}>
+                    <div className={contact.GENDER === "Male" ? "general-section-male" : "general-section-female"}>
                         <div className="profile-image-section">
                             <img src={contact.PHOTO} alt="avatar" />
                         </div>
                         <div className="info-section">
                             <h2>{contact.NAME}</h2>
                             <div>
-                                <img className="icon" src="icons/location.png" /><span>{contact.LOCATION}</span>
+                                <img className="icon" src="icons/location.png" alt="location" /><span>{contact.LOCATION}</span>
                             </div>
                             <div>
-                                <img src="icons/birthday-cake.png" /><span>{contact.DOB}</span>
+                                <img src="icons/birthday-cake.png" alt="birthday" /><span>{contact.DOB}</span>
                             </div>
                         </div>
                     </div>
@@ -30,10 +30,10 @@ export function Contacts(props) {
                     </div>
                     <div className="contact-info">
                         <div>
-                            <img src="icons/phone.png" /><span>{contact.PHONE}</span>
+                            <img src="icons/phone.png" alt="phone" /><span>{contact.PHONE}</span>
                         </div>
                         <div>
-                            <img src="icons/email.png" /><span>{contact.EMAIL}</span>
+                            <img src="icons/email.png" alt="email" /><span>{contact.EMAIL}</span>
                         </div>
                     </div>
                 </div>
