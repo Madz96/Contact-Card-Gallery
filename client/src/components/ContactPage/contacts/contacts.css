@@ -94,3 +94,8 @@
     width: 16px;
     vertical-align: middle;
 }
+
+.no-contacts {
+    color: white;
+    margin-top: 20px;
+}

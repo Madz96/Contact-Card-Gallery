@@ -12,7 +12,7 @@ router.get('/getAllContacts', jsonencodedParser, (req, res) => {
 });
 
 router.post('/searchByName', jsonencodedParser, (req, res) => {
-    res.status(200).send(contact_controller.searchByName(req.body.name));
+    res.status(200).send(contact_controller.searchByName(req.body.query, req.body.type));
 });
 
 module.exports = router;

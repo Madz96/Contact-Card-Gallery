@@ -1,20 +1,13 @@
-export const setContacts = (contacts) => {
+export const actionSetContacts = (contacts) => {
     return {
         type: "SET_CONTACTS",
         payload: contacts
     }
 }
 
-export const searchByName = (contact) => {
+export const actionSearchForContact = (contacts) => {
     return {
-        type:"SEARCH_BY_NAME",
-        payload: contact
-    }
-}
-
-export const searchByCountry = (contact) => {
-    return {
-        type:"SEARCH_BY_NAME",
-        payload: contact
+        type:"SEARCH_FOR_CONTACT",
+        payload: contacts
     }
 }

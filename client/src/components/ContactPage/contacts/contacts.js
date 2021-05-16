@@ -5,7 +5,14 @@ import './contacts.css';
 
 export function Contacts(props) {
     const contacts = useSelector(state => state.contacts);
-    console.log(contacts);
+    console.log(contacts.length);
+    if (contacts.length === 0) {
+        return (
+            <div className="no-contacts">
+                <h2>No contacts found!</h2>
+            </div>
+        );
+    }
 
     return (
         <div className="contact-list">

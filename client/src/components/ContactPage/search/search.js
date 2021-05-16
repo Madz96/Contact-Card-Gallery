@@ -1,54 +1,64 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setContacts, searchByName, searchByCountry } from '../actions';
-import { fetchContacts, fetchByName, fetchByCountry } from '../api';
+import { actionSearchForContact } from '../actions';
+import { searchForContact } from '../api';
+
+import './search.css';
 
 export function Search(props) {
-    const [nameQuery, setNameQuery] = useState("");
+    const [queryString, setQueryString] = useState("");
     const [queryType, setQueryType] = useState("name");
-    const [countryQuery, setCountryQuery] = useState("");
 
     const dispatcher = useDispatch();
 
-    const setContactByName = (query) => {
-        fetchByName(query).then(response => {
-            dispatcher(searchByName(response.data));
+    const setSearchQuery = (query, type) => {
+        searchForContact(query, type).then(response => {
+            dispatcher(actionSearchForContact(response.data));
         });
     }
 
-    const setContactByCountry = () => {
-        fetchByCountry().then(response => {
-            dispatcher(searchByCountry(response.data.data));
-        });
+    const changeQueryType = (event) => {
+        if (queryType !== event.target.value) {
+            setQueryType(event.target.value);
+            setSearchQuery(queryString, event.target.value);
+        }
     }
-
 
     return (
-        <div>
-            <div>
+        <div className="search-container">
+            <div className="query-section">
                 <input
-                    placeholder="Search By Name"
-                    value={nameQuery}
+                    placeholder="Search for Contact"
+                    value={queryString}
                     onChange={event => {
-                        setNameQuery(event.target.value);
-                        setContactByName(event.target.value);
+                        setQueryString(event.target.value);
+                        setSearchQuery(event.target.value, queryType);
                     }} />
             </div>
 
-            <div onChange={event => console.log(event.target.value)}>
-                <input
-                    type="radio"
-                    value="name"
-                    name="queryType"
-                    checked={queryType === "name"}
-                /> Name
-                <input
-                    type="radio"
-                    value="country"
-                    name="queryType"
-                    checked={queryType === "country"}
-                /> Country
+            <div className="type-section">
+                <span>Search By :</span>
+                <div className="queryType">
+                    <input
+                        type="radio"
+                        value="name"
+                        name="queryType"
+                        checked={queryType === "name"}
+                        onChange={event => changeQueryType(event)}
+                    />
+                    <label>Name</label>
+                </div>
+                <div className="queryType">
+                    <input
+                        type="radio"
+                        value="country"
+                        name="queryType"
+                        checked={queryType === "country"}
+                        onChange={event => changeQueryType(event)}
+                    /> 
+                    <label>Country</label>
+                </div>
             </div>
         </div>
     );
