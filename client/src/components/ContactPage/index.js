@@ -12,7 +12,7 @@ export function ContactPage(props) {
 
     const setAllContacts = () => {
         fetchContacts().then(response => {
-            dispatcher(setContacts(response.data.data));
+            dispatcher(setContacts(response.data));
         })
     }
 
