@@ -15,5 +15,5 @@ Features a simple card gallery which displays a list of contacts. Users have the
 3. Run 'npm start' to launch the client application
 
 ### Modifications done to the provided material
-1. Modified the provided dataset by including a key-value pair under the key "GENDER". This was done in order to differntiate the genders of the contact person.
+1. Modified the provided dataset by including a key-value pair under the key "GENDER". This was done in order to differntiate the gender of the contact person.
 2. Added a radio group to switch between different search types.
