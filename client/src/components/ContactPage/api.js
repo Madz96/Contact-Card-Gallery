@@ -14,7 +14,7 @@ export const searchForContact = async (query, type) => {
     const payload = { query: query, type: type };
     
     const response = await axios.post('http://localhost:3100/contacts/searchByName', payload).catch(error => {
-        console.log("Error when fetching all contacts: ", error);
+        console.log("Error when fetching searched contacts: ", error);
     });
 
     return response;
