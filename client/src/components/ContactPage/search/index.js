@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { actionSearchForContact } from '../actions';
 import { searchForContact } from '../api';
 
-import './search.css';
+import './index.css';
 
 export function Search(props) {
     const [queryString, setQueryString] = useState("");

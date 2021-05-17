@@ -1,4 +1,4 @@
-import contactReducers from './reducers';
+import contactReducers from '.';
 
 const contacts = [
     {

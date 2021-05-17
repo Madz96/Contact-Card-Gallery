@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import './contacts.css';
+import './index.css';
 
 export function Contacts(props) {
     const contacts = useSelector(state => state.contacts);

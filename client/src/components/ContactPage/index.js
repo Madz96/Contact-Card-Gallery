@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux'
 import { actionSetContacts } from './actions';
 import { fetchContacts } from './api';
 
-import { Contacts } from './contacts/contacts';
-import { Search } from './search/search';
+import { Contacts } from './contacts';
+import { Search } from './search';
 
 export function ContactPage(props) {
     const dispatcher = useDispatch();
