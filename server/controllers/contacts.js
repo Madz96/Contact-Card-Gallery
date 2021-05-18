@@ -1,10 +1,12 @@
 const fs = require('fs');
 const rawData = fs.readFileSync('contact_card.json');
 
+// Process the json file and return all objects
 function getAllContacts() {
     return JSON.parse(rawData);
 }
 
+// Process the json file and return objects that matches the query
 function searchByName(query, type) {
     const data = JSON.parse(rawData);
     let results = [];
