@@ -15,7 +15,7 @@ export function Contacts(props) {
     }
 
     return (
-        <div className="contact-list">
+        <div test-attr="contacts-component" className="contact-list">
             {contacts.map((contact, i) => (
                 <div className="contact-card" key={i}>
                     <div className={contact.GENDER === "Male" ? "general-section-male" : "general-section-female"}>

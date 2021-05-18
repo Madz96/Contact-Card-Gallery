@@ -2,19 +2,19 @@ import { shallow } from 'enzyme';
 import { findByTestAttr } from './utils'
 import App from './App';
 
-const renderApp = (props = {}) => {
+const renderComponent = (props = {}) => {
   return shallow(<App />);
 }
 
 describe('App component', () => {
-  let app;
+  let component;
 
   beforeEach(() => {
-    app = renderApp();
+    component = renderComponent();
   });
 
   it('Should render without error', () => {
-    const wrapper = findByTestAttr(app, 'app-component');
+    const wrapper = findByTestAttr(component, 'app-component');
     expect(wrapper.length).toBe(1);
   });
 })

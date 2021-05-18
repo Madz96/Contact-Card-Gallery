@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 
 import { actionSetContacts } from './actions';
-import { fetchContacts } from './api';
+import { fetchContactsAPI } from './api';
 
 import { Contacts } from './contacts';
 import { Search } from './search';
@@ -11,9 +11,9 @@ export function ContactPage(props) {
     const dispatcher = useDispatch();
 
     const setAllContacts = () => {
-        fetchContacts().then(response => {
+        fetchContactsAPI().then(response => {
             dispatcher(actionSetContacts(response.data));
-        })
+        });
     }
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export function ContactPage(props) {
     }, []);
 
     return (
-        <div>
+        <div test-attr="contact-page-component">
             <Search />
             <Contacts />
         </div>

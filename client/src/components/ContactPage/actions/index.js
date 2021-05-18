@@ -7,7 +7,7 @@ export const actionSetContacts = (contacts) => {
 
 export const actionSearchForContact = (contacts) => {
     return {
-        type:"SEARCH_FOR_CONTACT",
+        type: "SEARCH_FOR_CONTACT",
         payload: contacts
     }
 }

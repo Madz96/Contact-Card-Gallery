@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { actionSearchForContact } from '../actions';
-import { searchForContact } from '../api';
+import { searchForContactAPI } from '../api';
 
 import './index.css';
 
@@ -13,7 +13,7 @@ export function Search(props) {
     const dispatcher = useDispatch();
 
     const setSearchQuery = (query, type) => {
-        searchForContact(query, type).then(response => {
+        searchForContactAPI(query, type).then(response => {
             dispatcher(actionSearchForContact(response.data));
         });
     }

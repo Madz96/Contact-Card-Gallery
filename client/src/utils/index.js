@@ -11,7 +11,8 @@ export const checkProps = (component, expectedProps) => {
     return checkPropTypes(component.propTypes, expectedProps, 'props', component.name)
 };
 
+const middleware = [ReduxThunk];
 export const testReduxStore = (initState) => {
-    const createStoreWithMiddleware = applyMiddleware([ReduxThunk])(createStore);
+    const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
     return createStoreWithMiddleware(contactReducers, initState);
 };
