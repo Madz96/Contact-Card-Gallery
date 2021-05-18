@@ -4,8 +4,10 @@ import { useSelector } from 'react-redux';
 import './index.css';
 
 export function Contacts(props) {
+    /* Load contacts from state */
     const contacts = useSelector(state => state.contacts);
-    console.log(contacts.length);
+
+    /* Load if no contacts are present in the state */
     if (contacts.length === 0) {
         return (
             <div className="no-contacts">
@@ -14,6 +16,7 @@ export function Contacts(props) {
         );
     }
 
+    /* Load if contacts are present in the state */
     return (
         <div test-attr="contacts-component" className="contact-list">
             {contacts.map((contact, i) => (

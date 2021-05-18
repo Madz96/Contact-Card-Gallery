@@ -10,6 +10,7 @@ import { Search } from './search';
 export function ContactPage(props) {
     const dispatcher = useDispatch();
 
+    /* Function which makes the api call and update the state */
     const setAllContacts = () => {
         fetchContactsAPI().then(response => {
             dispatcher(actionSetContacts(response.data));

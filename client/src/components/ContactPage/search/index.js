@@ -12,6 +12,7 @@ export function Search(props) {
 
     const dispatcher = useDispatch();
 
+    /* Function which makes the api call and update the state */
     const setSearchQuery = (query, type) => {
         searchForContactAPI(query, type).then(response => {
             dispatcher(actionSearchForContact(response.data));
@@ -27,6 +28,7 @@ export function Search(props) {
 
     return (
         <div className="search-container">
+            {/* Input section for search query  */}
             <div className="query-section">
                 <input
                     placeholder="Search for Contact"
@@ -37,6 +39,7 @@ export function Search(props) {
                     }} />
             </div>
 
+            {/* Section to select the type of search query */}
             <div className="type-section">
                 <span>Search By :</span>
                 <div className="queryType">
@@ -56,7 +59,7 @@ export function Search(props) {
                         name="queryType"
                         checked={queryType === "country"}
                         onChange={event => changeQueryType(event)}
-                    /> 
+                    />
                     <label>Country</label>
                 </div>
             </div>

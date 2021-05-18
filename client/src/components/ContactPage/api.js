@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-/* API call to retrieve all the contacts & save contact data to state */
+/* API call to retrieve all the contacts */
 export const fetchContactsAPI = async () => {
     const response = await axios.get('http://localhost:3100/contacts/getAllContacts').catch(error => {
         console.log("Error when fetching all contacts: ", error);
@@ -9,7 +9,7 @@ export const fetchContactsAPI = async () => {
     return response;
 }
 
-/* API call to retrieve contact by name & save contact data to state */
+/* API call to retrieve contact by name */
 export const searchForContactAPI = async (query, type) => {
     const payload = { query: query, type: type };
     
