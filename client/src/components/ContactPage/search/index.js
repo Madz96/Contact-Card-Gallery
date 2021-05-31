@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { actionSearchForContact, actionSetContactCount } from '../actions';
+import { actionSetLoaderStatus } from '../../Loader/actions';
 import { searchForContactAPI } from '../api';
 
 import './index.css';
@@ -21,8 +22,10 @@ export function Search(props) {
     }
 
     useEffect(() => {
+        dispatcher(actionSetLoaderStatus(true));
         const timeOut = setTimeout(() => {
             setSearchQuery();
+            dispatcher(actionSetLoaderStatus(false));
         }, 3000);
         return () => clearTimeout(timeOut);
     }, [queryString, queryType])

@@ -14,7 +14,6 @@ export function ContactPage(props) {
     const dispatcher = useDispatch();
     const showLoader = useSelector(state => state.loader.status);
 
-
     /* Function which makes the api call and update the state */
     const setAllContacts = () => {
         fetchContactsAPI().then(response => {
@@ -35,7 +34,7 @@ export function ContactPage(props) {
         <div test-attr="contact-page-component">
             <Search />
             {showLoader && <Loader />}
-            
+
             {!showLoader &&
                 <div>
                     <ResultCount />
