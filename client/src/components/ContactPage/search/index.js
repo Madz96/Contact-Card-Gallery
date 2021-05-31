@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { actionSearchForContact } from '../actions';
@@ -12,17 +12,18 @@ export function Search(props) {
 
     const dispatcher = useDispatch();
 
-    /* Function which makes the api call and update the state */
-    const setSearchQuery = (query, type) => {
-        searchForContactAPI(query, type).then(response => {
-            dispatcher(actionSearchForContact(response.data));
-        });
-    }
+    /* Makes the api call and update the state each time queryString & queryType updates*/
+    useEffect(() => {
+        setTimeout(() => {
+            searchForContactAPI(queryString, queryType).then(response => {
+                dispatcher(actionSearchForContact(response.data));
+            });
+        }, 3000);
+    }, [queryString, queryType]);
 
     const changeQueryType = (event) => {
         if (queryType !== event.target.value) {
             setQueryType(event.target.value);
-            setSearchQuery(queryString, event.target.value);
         }
     }
 
@@ -35,7 +36,6 @@ export function Search(props) {
                     value={queryString}
                     onChange={event => {
                         setQueryString(event.target.value);
-                        setSearchQuery(event.target.value, queryType);
                     }} />
             </div>
 
