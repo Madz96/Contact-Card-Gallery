@@ -14,16 +14,17 @@ export function Search(props) {
 
     /* Function which makes the api call and update the state */
     const setSearchQuery = () => {
-        setTimeout(() => {
-            searchForContactAPI(queryString, queryType).then(response => {
-                dispatcher(actionSearchForContact(response.data));
-                dispatcher(actionSetContactCount(response.data.length));
-            });
-        }, 3000);
+        searchForContactAPI(queryString, queryType).then(response => {
+            dispatcher(actionSearchForContact(response.data));
+            dispatcher(actionSetContactCount(response.data.length));
+        });
     }
 
     useEffect(() => {
-        setSearchQuery();
+        const timeOut = setTimeout(() => {
+            setSearchQuery();
+        }, 3000);
+        return () => clearTimeout(timeOut);
     }, [queryString, queryType])
 
     const changeQueryType = (event) => {

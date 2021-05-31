@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import './index.css';
 
 export function ResultCount(props) {
-    const count = useSelector(state => state.count);
+    const count = useSelector(state => state.contact.count);
 
     if (count === 0) {
         return (null);
