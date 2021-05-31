@@ -7,6 +7,7 @@ import { fetchContactsAPI } from './api';
 import { Contacts } from './contacts';
 import { Search } from './search';
 import { ResultCount } from './result-count';
+import { Loader } from '../Loader';
 
 export function ContactPage(props) {
     const dispatcher = useDispatch();
