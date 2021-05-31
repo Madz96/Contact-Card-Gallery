@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { actionSearchForContact } from '../actions';
+import { actionSearchForContact, actionSetContactCount } from '../actions';
 import { searchForContactAPI } from '../api';
 
 import './index.css';
@@ -12,14 +12,19 @@ export function Search(props) {
 
     const dispatcher = useDispatch();
 
-    /* Makes the api call and update the state each time queryString & queryType updates*/
-    useEffect(() => {
+    /* Function which makes the api call and update the state */
+    const setSearchQuery = () => {
         setTimeout(() => {
             searchForContactAPI(queryString, queryType).then(response => {
                 dispatcher(actionSearchForContact(response.data));
+                dispatcher(actionSetContactCount(response.data.length));
             });
         }, 3000);
-    }, [queryString, queryType]);
+    }
+
+    useEffect(() => {
+        setSearchQuery();
+    }, [queryString, queryType])
 
     const changeQueryType = (event) => {
         if (queryType !== event.target.value) {

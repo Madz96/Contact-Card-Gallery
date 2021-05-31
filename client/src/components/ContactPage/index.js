@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 
-import { actionSetContacts } from './actions';
+import { actionSetContacts, actionSetContactCount } from './actions';
 import { fetchContactsAPI } from './api';
 
 import { Contacts } from './contacts';
 import { Search } from './search';
+import { ResultCount } from './result-count';
 
 export function ContactPage(props) {
     const dispatcher = useDispatch();
@@ -14,6 +15,7 @@ export function ContactPage(props) {
     const setAllContacts = () => {
         fetchContactsAPI().then(response => {
             dispatcher(actionSetContacts(response.data));
+            dispatcher(actionSetContactCount(response.data.length));
         });
     }
 
@@ -24,6 +26,7 @@ export function ContactPage(props) {
     return (
         <div test-attr="contact-page-component">
             <Search />
+            <ResultCount />
             <Contacts />
         </div>
     )

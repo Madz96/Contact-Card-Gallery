@@ -13,3 +13,11 @@ export const actionSearchForContact = (contacts) => {
         payload: contacts
     }
 }
+
+/* Redux action to set contact count */ 
+export const actionSetContactCount = (count) => {
+    return {
+        type: "SET_CONTACT_COUNT",
+        payload: count
+    }
+}

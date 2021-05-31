@@ -1,5 +1,6 @@
 const defaultState = {
-    contacts: []
+    contacts: [],
+    count: 0
 };
 
 const contactReducers = (state = defaultState, action) => {
@@ -8,6 +9,8 @@ const contactReducers = (state = defaultState, action) => {
             return { ...state, contacts: action.payload };
         case "SEARCH_FOR_CONTACT":
             return { ...state, contacts: action.payload };
+        case "SET_CONTACT_COUNT":
+            return { ...state, count: action.payload };
         default:
             return state;
     }
