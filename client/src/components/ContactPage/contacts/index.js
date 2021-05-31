@@ -5,7 +5,7 @@ import './index.css';
 
 export function Contacts(props) {
     /* Load contacts from state */
-    const contacts = useSelector(state => state.contacts);
+    const contacts = useSelector(state => state.contact.contacts);
 
     /* Load if no contacts are present in the state */
     if (contacts.length === 0) {

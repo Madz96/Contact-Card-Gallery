@@ -3,7 +3,7 @@ const defaultState = {
     count: 0
 };
 
-const contactReducers = (state = defaultState, action) => {
+const contactReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "SET_CONTACTS":
             return { ...state, contacts: action.payload };
@@ -16,4 +16,4 @@ const contactReducers = (state = defaultState, action) => {
     }
 }
 
-export default contactReducers;
+export default contactReducer;
